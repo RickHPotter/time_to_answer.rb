@@ -1,2 +1,7 @@
 <h1>Site::Welcome#index</h1>
 <p>Find me in app/views/site/welcome/index.html.erb</p>
+
+<br>
+<%= "User: #{current_user.email if user_signed_in?}" %>
+<hr>
+<%= "Admin: #{current_admin&.email}" %>
