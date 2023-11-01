@@ -1,0 +1,12 @@
+<h1 class="h3 mb-4 text-gray-800">AdminsBackOffice::Admins#index</h1>
+
+<%= render 'layouts/sb_admin_2/datatable' %>
+
+<% @admins.each do |admin| %>
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title"><%= admin.id %></h5>
+      <p class="card-text"><%= admin.email %></p>
+    </div>
+  </div>
+<% end %>

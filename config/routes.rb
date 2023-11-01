@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admins_back_office, path: 'admins_backoffice' do
+    get 'admins/index'
     get 'welcome/index'
   end
 
