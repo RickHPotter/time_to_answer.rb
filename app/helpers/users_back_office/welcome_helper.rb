@@ -2,6 +2,6 @@
 
 module UsersBackOffice
   # Controller for Welcome in Users BackOffice
-  class WelcomeHelper
+  module WelcomeHelper
   end
 end

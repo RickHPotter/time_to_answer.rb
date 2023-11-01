@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module AdminsBackOffice
-  class AdminsController < ApplicationController
+  # Controller for Admins in Admins BackOffice
+  class AdminsController < AdminsBackOfficeController
   end
 end
