@@ -1,5 +1,4 @@
-<%= render 'layouts/sb_admin_2/head', title: '| User |' %>
-
-<%= render 'layouts/sb_admin_2/template', options: { colour: 'danger' } do %>
+<%= render 'layouts/sb_admin_2/template',
+           options: { colour: 'danger', title: 'Admin' } do %>
   <%= yield %>
 <% end %>

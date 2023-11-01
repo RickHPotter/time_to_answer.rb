@@ -5,11 +5,11 @@ Rails.application.routes.draw do
     get 'welcome/index'
   end
 
-  namespace :users_backoffice do
+  namespace :users_back_office, path: 'users_backoffice' do
     get 'welcome/index'
   end
 
-  namespace :admins_backoffice do
+  namespace :admins_back_office, path: 'admins_backoffice' do
     get 'welcome/index'
   end
 

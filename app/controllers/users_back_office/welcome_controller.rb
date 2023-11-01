@@ -2,6 +2,7 @@
 
 module UsersBackOffice
   # Controller for Welcome in Users BackOffice
-  class WelcomeHelper
+  class WelcomeController < UsersBackOfficeController
+    def index; end
   end
 end

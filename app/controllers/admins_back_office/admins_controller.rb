@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 module AdminsBackOffice
-  class WelcomeHelper
+  class AdminsController < ApplicationController
   end
 end
