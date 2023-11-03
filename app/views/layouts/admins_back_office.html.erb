@@ -1,4 +1,4 @@
 <%= render 'layouts/sb_admin_2/template',
-           options: { colour: 'danger', title: 'Admin' } do %>
+           options: { colour: 'danger', title: 'Admin', current_email: current_admin.email } do %>
   <%= yield %>
 <% end %>

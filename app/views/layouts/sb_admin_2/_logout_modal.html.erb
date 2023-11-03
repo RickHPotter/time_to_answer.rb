@@ -13,13 +13,11 @@
         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
 
         <% if admin_signed_in? %>
-          <%= link_to 'Logout as Admin', destroy_admin_session_path, method: :delete,
-                      class: "btn btn-danger" %>
+          <%= button_to 'Logout as Admin', destroy_admin_session_path, method: :delete, class: "btn btn-danger" %>
         <% end %>
 
         <% if user_signed_in? %>
-          <%= link_to 'Logout as User', destroy_user_session_path, method: :delete,
-                      class: "btn btn-primary" %>
+          <%= button_to 'Logout as User', destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
         <% end %>
       </div>
     </div>

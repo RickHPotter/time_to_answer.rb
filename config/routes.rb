@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  devise_for :users
+  devise_for :admins
+
   namespace :site do
     get 'welcome/index'
   end
@@ -13,9 +16,6 @@ Rails.application.routes.draw do
     get 'admins/index'
     get 'welcome/index'
   end
-
-  devise_for :users
-  devise_for :admins
 
   root to: 'site/welcome#index'
 end
