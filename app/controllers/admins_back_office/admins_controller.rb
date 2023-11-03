@@ -3,8 +3,14 @@
 module AdminsBackOffice
   # Controller for Admins in Admins BackOffice
   class AdminsController < AdminsBackOfficeController
-    def index
-      @admins = Admin.all
+    before_action :set_admin, only: %i[show edit update destroy]
+
+    def index; end
+
+    private
+
+    def set_admin
+      @admin = Admin.find(params[:id])
     end
   end
 end

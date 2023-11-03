@@ -1,12 +1,7 @@
-<h1 class="h3 mb-4 text-gray-800">AdminsBackOffice::Admins#index</h1>
+<h1 class="h3 mb-2 text-gray-800">
+  <%= Admin.model_name.human.pluralize(@admins) %>
+</h1>
 
-<%= render 'layouts/sb_admin_2/datatable' %>
+<p class="mb-4"> Note that you cannot delete admins or edit their data. </p>
 
-<% @admins.each do |admin| %>
-  <div class="card mb-3">
-    <div class="card-body">
-      <h5 class="card-title"><%= admin.id %></h5>
-      <p class="card-text"><%= admin.email %></p>
-    </div>
-  </div>
-<% end %>
+<%= ajax_datatable *Admin.datatable(%w[id email created_at updated_at]) %>
