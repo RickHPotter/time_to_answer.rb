@@ -4,18 +4,6 @@ Rails.application.routes.draw do
   devise_for :users
   devise_for :admins
 
-  namespace :site do
-    get 'welcome/index'
-  end
-
-  namespace :users_back_office, path: 'users_backoffice' do
-    get 'welcome/index'
-  end
-
-  namespace :admins_back_office, path: 'admins_backoffice' do
-    get 'admins/index'
-    get 'welcome/index'
-  end
-
-  root to: 'site/welcome#index'
+  get '/user/index',  to: 'users_back_office/users#index',   as: :user_root
+  get '/admin/index', to: 'admins_back_office/admins#index', as: :admin_root
 end

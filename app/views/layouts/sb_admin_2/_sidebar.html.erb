@@ -2,12 +2,12 @@
 <ul class="navbar-nav bg-gradient-<%= options[:colour] %> sidebar toggled sidebar-dark accordion" id="accordionSidebar">
 
   <!-- Sidebar - Brand -->
-  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/templates/sb-admin-2/index.html">
+  <div class="sidebar-brand d-flex align-items-center justify-content-center">
     <div class="sidebar-brand-icon rotate-n-15">
       <i class="fas fa-laugh-wink"></i>
     </div>
     <div class="sidebar-brand-text mx-3"><%= options[:title] %><sup>16</sup></div>
-  </a>
+  </div>
 
   <!-- Divider -->
   <hr class="sidebar-divider my-0">
@@ -20,7 +20,7 @@
   <% if admin_signed_in? %>
     <!-- Nav Item - Admins -->
     <li class="nav-item">
-      <%= link_to admins_back_office_admins_index_path, class: 'nav-link' do %>
+      <%= link_to admin_root_path, class: 'nav-link' do %>
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Admins</span></a>
     <% end %>
@@ -28,7 +28,7 @@
 
     <!-- Nav Item - Users -->
     <li class="nav-item">
-      <%= link_to users_back_office_welcome_index_path, class: 'nav-link' do %>
+      <%= link_to user_root_path, class: 'nav-link' do %>
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Users</span></a>
     <% end %>
@@ -43,18 +43,28 @@
     Interface
   </div>
 
+  <!-- Divider -->
+  <hr class="sidebar-divider my-0">
+
   <!-- Nav Item - Pages Collapse Menu -->
   <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                                                                   aria-expanded="true" aria-controls="collapseTwo">
-      <i class="fas fa-fw fa-cog"></i>
-      <span>Components</span>
+      <i class="fas fa-fw fa-address-book"></i>
+      <span>Contact</span>
     </a>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <h6 class="collapse-header">Custom Components:</h6>
-        <a class="collapse-item" href="/templates/sb-admin-2/buttons.html">Buttons</a>
-        <a class="collapse-item" href="/templates/sb-admin-2/cards.html">Cards</a>
+        <h6 class="collapse-header">Where You Can Find Me:</h6>
+        <%= link_to 'https://github.com/RickHPotter', class: 'collapse-item', target: '_blank' do %>
+          <i class="fab fa-github"></i>
+          GitHub
+        <% end %>
+
+        <%= link_to 'https://www.linkedin.com/in/luís-henrique-b024b721b/', class: 'collapse-item', target: '_blank' do %>
+          <i class="fab fa-linkedin-in"></i>
+          LinkedIn
+        <% end %>
       </div>
     </div>
   </li>
@@ -80,28 +90,6 @@
 
   <!-- Divider -->
   <hr class="sidebar-divider">
-
-  <!-- Heading -->
-  <div class="sidebar-heading">
-    Addons
-  </div>
-
-  <!-- Nav Item - Charts -->
-  <li class="nav-item">
-    <a class="nav-link" href="/templates/sb-admin-2/charts.html">
-      <i class="fas fa-fw fa-chart-area"></i>
-      <span>Charts</span></a>
-  </li>
-
-  <!-- Nav Item - Tables -->
-  <li class="nav-item">
-    <a class="nav-link" href="/templates/sb-admin-2/tables.html">
-      <i class="fas fa-fw fa-table"></i>
-      <span>Tables</span></a>
-  </li>
-
-  <!-- Divider -->
-  <hr class="sidebar-divider d-none d-md-block">
 
   <!-- Sidebar Toggler (Sidebar) -->
   <div class="text-center d-none d-md-inline">
