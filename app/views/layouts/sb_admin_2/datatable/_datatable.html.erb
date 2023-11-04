@@ -10,28 +10,28 @@
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <% keys.each do |key| %>
-              <th><%= key %></th>
+            <% columns.each_value do |value| %>
+              <th><%= value[:label] %></th>
             <% end %>
           </tr>
         </thead>
         <% if options[:tfoot] %>
           <tfoot>
             <tr>
-              <% keys.each do |key| %>
-                <td><%= key %></td>
+              <% columns.each_value do |value| %>
+                <th><%= value[:label] %></th>
               <% end %>
             </tr>
           </tfoot>
         <% end %>
         <tbody>
-          <% values.each do |value| %>
+          <% datum.each do |data| %>
             <tr>
-              <% keys.each_with_index do |key, index| %>
-                <% if value[index].is_a? Time %>
-                  <td><%= value[index].strftime('%Y %B %d %H:%M:%S') %></td>
+              <% data.each_pair do |key, value| %>
+                <% if value.is_a? Time %>
+                  <td><%= value.strftime('%Y %B %d %H:%M:%S') %></td>
                 <% else %>
-                  <td><%= value[index] %></td>
+                  <td><%= value %></td>
                 <% end %>
               <% end %>
             </tr>

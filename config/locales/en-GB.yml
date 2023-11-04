@@ -1,0 +1,8 @@
+actions:
+  index: Index
+  show: Show
+  new: New
+  create: Create
+  edit: Edit
+  update: Update
+  destroy: Destroy

@@ -12,12 +12,12 @@
   <!-- Divider -->
   <hr class="sidebar-divider my-0">
 
-  <!-- Heading -->
-  <div class="sidebar-heading">
-    People
-  </div>
-
   <% if admin_signed_in? %>
+    <!-- Heading -->
+    <div class="sidebar-heading">
+      People
+    </div>
+
     <!-- Nav Item - Admins -->
     <li class="nav-item">
       <%= link_to admin_root_path, class: 'nav-link' do %>
@@ -34,9 +34,6 @@
     <% end %>
     </li>
   <% end %>
-
-  <!-- Divider -->
-  <hr class="sidebar-divider my-0">
 
   <!-- Heading -->
   <div class="sidebar-heading">

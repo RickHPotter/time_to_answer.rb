@@ -5,7 +5,15 @@ module UsersBackOffice
   class UsersController < UsersBackOfficeController
     before_action :set_user, only: %i[show edit update destroy]
 
-    def index; end
+    def index
+      respond_to do |format|
+        format.html
+        # TODO: Make this a POST route so that this can be used
+        format.json { render json: Datatable::DatatableUser.new(params) }
+      end
+    end
+
+    def edit; end
 
     private
 

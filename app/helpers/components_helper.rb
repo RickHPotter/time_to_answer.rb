@@ -3,8 +3,8 @@
 # Components for making one's life easier
 module ComponentsHelper
   # The so-loved datatable
-  def ajax_datatable(model, keys, values, options = {}, &block)
+  def ajax_datatable(columns, datum, options = {}, &block)
     options[:title] ||= controller_name.capitalize
-    render 'layouts/sb_admin_2/datatable/datatable', model:, keys:, values:, options:, &block
+    render 'layouts/sb_admin_2/datatable/datatable', columns:, datum:, options:, &block
   end
 end

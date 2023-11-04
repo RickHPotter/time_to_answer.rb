@@ -4,4 +4,5 @@
 
 <p class="mb-4">Beware. You are indeed allowed to edit or delete users. </p>
 
-<%= ajax_datatable *User.datatable(%w[id email created_at updated_at]) %>
+<% d = Datatable::DatatableUser.new(view_context: self).datatable %>
+<%= ajax_datatable *d %>
