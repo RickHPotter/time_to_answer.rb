@@ -1,5 +1,3 @@
-<!-- FIXME: start: DRY / this is exactly the same for admin and user -->
-
 <%- if controller_name != 'sessions' %>
   <%= link_to "Log in", new_session_path(resource_name), class: 'small' %><br />
 <% end %>
@@ -26,6 +24,4 @@
   <% end %>
 <% end %>
 
-<!-- FIXME: end: apart from the following -->
-
-<%= link_to 'Not an User? Sign In as Admin', new_session_path(:admin), class: 'small' %><br />
+<%= link_to_switch_devise %>

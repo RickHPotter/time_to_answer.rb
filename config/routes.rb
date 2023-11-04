@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   get '/user/index',  to: 'users_back_office/users#index',   as: :user_root
   get '/admin/index', to: 'admins_back_office/admins#index', as: :admin_root
+
+  root to: 'users#sign_in'
 end

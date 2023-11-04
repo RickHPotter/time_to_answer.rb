@@ -1,18 +1,3 @@
-<style>
-  .bg-image {
-    background-position: center;
-    background-size: cover;
-  }
-
-  .bg-login-admin {
-    background: url('https://cdn140.picsart.com/288880307005211.png?to=crop&type=webp&r=470x480&q=85');
-  }
-
-  .bg-login-user {
-    background: url('https://cdn130.picsart.com/288881236029211.png?to=crop&type=webp&r=470x480&q=85');
-  }
-</style>
-
 <!-- FIXME: errors_messages missing -->
 
 <body class='bg-gradient-<%= options[:colour] %>'>
@@ -60,7 +45,7 @@
                     <hr>
 
                     <div class='text-center'>
-                      <%= render "#{resource_name.to_s.pluralize}/shared/links" %>
+                      <%= render 'layouts/devise/shared/links' %>
                     </div>
 
                   <% end %>
