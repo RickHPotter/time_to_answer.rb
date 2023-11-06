@@ -23,4 +23,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def self.datatable(params = {}, view_context: nil)
+    Datatable::DatatableUser.new(params, view_context:).datatable
+  end
 end

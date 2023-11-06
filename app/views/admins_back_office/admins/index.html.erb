@@ -1,7 +1,7 @@
-<h1 class="h3 mb-2 text-gray-800">
-  <%= Admin.model_name.human.pluralize(@admins) %>
+<h1 class='h3 mb-2 text-gray-800'>
+  <%= model_on_count(@admins) %>
 </h1>
 
-<p class="mb-4"> Note that you cannot delete admins or edit their data. </p>
+<p class='mb-4'> Note that you cannot delete admins or edit their data. </p>
 
-<%= ajax_datatable *Admin.datatable(%w[id email created_at updated_at]) %>
+<%= ajax_datatable *Admin.datatable(view_context: self) %>

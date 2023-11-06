@@ -4,8 +4,25 @@ Rails.application.routes.draw do
   devise_for :users
   devise_for :admins
 
-  get '/user/index',  to: 'users_back_office/users#index',   as: :user_root
-  get '/admin/index', to: 'admins_back_office/admins#index', as: :admin_root
+  scope module: :admins_back_office do
+    scope module: :admins, path: 'admins' do
+      get 'index', as: :admin_root
+    end
+
+    namespace :admins do
+      post 'datatable'
+    end
+  end
+
+  scope module: :users_back_office do
+    scope module: :users, path: 'users' do
+      get 'index', as: :user_root
+    end
+
+    namespace :users do
+      post 'datatable'
+    end
+  end
 
   root to: 'users#sign_in'
 end

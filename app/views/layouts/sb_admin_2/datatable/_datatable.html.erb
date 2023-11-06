@@ -1,13 +1,13 @@
 <%= render 'layouts/sb_admin_2/datatable/head' %>
 
 <!-- Page Heading -->
-<div class="card shadow mb-4">
-  <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-right"><%= options[:title] %></h6>
+<div class='card shadow mb-4'>
+  <div class='card-header py-3'>
+    <h6 class='m-0 font-weight-bold text-right'><%= options[:title] %></h6>
   </div>
-  <div class="card-body">
-    <div class="table-responsive">
-      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+  <div class='card-body'>
+    <div class='table-responsive'>
+      <table class='table table-bordered' id='dataTable' width='100%' cellspacing='0'>
         <thead>
           <tr>
             <% columns.each_value do |value| %>
@@ -28,11 +28,7 @@
           <% datum.each do |data| %>
             <tr>
               <% data.each_pair do |key, value| %>
-                <% if value.is_a? Time %>
-                  <td><%= value.strftime('%Y %B %d %H:%M:%S') %></td>
-                <% else %>
-                  <td><%= value %></td>
-                <% end %>
+                <td><%= value %></td>
               <% end %>
             </tr>
           <% end %>
