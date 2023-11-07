@@ -11,7 +11,15 @@ module UsersBackOffice
       respond_to(&:html)
     end
 
-    def edit; end
+    def destroy
+      if current_user.id == @user.id
+        flash[:alert] = 'You cannot destroy yourself.'
+      elsif @user.destroy
+        flash[:notice] = 'User was successfully destroyed.'
+      end
+
+      redirect_to user_root_path
+    end
 
     private
 

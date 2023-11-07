@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+As far as I know, the steps to run this are:
 
-Things you may want to cover:
+- git clone
+- bundle
+- yarn
+- rails db:create db:migrate
+- rails s
 
-* Ruby version
+bugfixes for later:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- implement forgot_password and edit_password
+- implement new pictures for these aforementioned pages

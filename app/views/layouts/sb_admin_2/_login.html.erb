@@ -1,5 +1,3 @@
-<!-- FIXME: errors_messages missing -->
-
 <body class='bg-gradient-<%= options[:colour] %>'>
   <div class='container'>
     <!-- Outer Row -->
@@ -58,3 +56,12 @@
     </div>
   </div>
 </body>
+
+<script>
+  $(document).ready(function() {
+    <% if controller_name == 'sessions' && action_name == 'new' && alert.present? %>
+      $('#inputEmail').addClass('animate__animated animate__shakeX border-danger')
+      $('#inputPassword').addClass('animate__animated animate__shakeX border-danger')
+    <% end %>
+  });
+</script>

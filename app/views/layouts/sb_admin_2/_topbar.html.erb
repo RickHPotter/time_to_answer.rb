@@ -14,6 +14,15 @@
     </div>
   </form>
 
+  <% if notice || alert %>
+    <div class="p-0" id="fading_containner">
+    <div class="px-3 border border-1 rounded-3 border-<%= options[:colour] %>" id="wobbling_container">
+      <h6 id="notice" class="text-success"><%= notice %></h6>
+      <h6 id="alert" class="text-danger"><%= alert %></h6>
+    </div>
+    </div>
+  <% end %>
+
   <!-- Topbar Navbar -->
   <ul class="navbar-nav ml-auto">
 
@@ -70,3 +79,15 @@
   </ul>
 </nav>
 <!-- End of Topbar -->
+
+<script>
+  $(document).ready(function() {
+    notice = $('#notice').text().length
+    alert = $('#alert').text().length
+
+    if (notice + alert > 0) {
+      $('#wobbling_container').addClass('animate__animated animate__wobble animate__delay-1s')
+      $('#fading_containner').addClass('animate__animated animate__fadeOut animate__delay-3s')
+    }
+  });
+</script>
