@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
     namespace :admins do
       post 'datatable'
+      delete 'destroy'
     end
   end
 
@@ -21,6 +22,7 @@ Rails.application.routes.draw do
 
     namespace :users do
       post 'datatable'
+      delete 'destroy'
     end
   end
 

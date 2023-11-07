@@ -9,6 +9,7 @@ namespace :dev do
       show_spinner('Dropping BD...') { `rails db:drop` }
       show_spinner('Creating BD...') { `rails db:create` }
       show_spinner('Migrating BD...') { `rails db:migrate` }
+      show_spinner('Seeding DB...') { `rails db:seed` }
       show_spinner('Generating default admin...') { `rails dev:add_default_admin` }
       show_spinner('Generating extra admins...') { `rails dev:add_extra_admins` }
       show_spinner('Generating default user...') { `rails dev:add_default_user` }
