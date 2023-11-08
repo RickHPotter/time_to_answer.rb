@@ -11,7 +11,14 @@
         <thead>
           <tr>
             <% columns.each_value do |value| %>
-              <th><%= value[:label] %></th>
+              <% label = value[:label] %>
+              <% if label == 'ID' %>
+                <th style = '<%= 'width: 8%'  %>'><%= label %></th>
+              <% elsif label == 'Actions' %>
+                <th style = '<%= 'width: 15%'  %>'><%= label %></th>
+              <% else %>
+                <th><%= label %></th>
+              <% end %>
             <% end %>
           </tr>
         </thead>

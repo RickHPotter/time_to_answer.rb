@@ -1,0 +1,40 @@
+<div class='row'>
+  <div class='col-lg-12'>
+    <h1 class='text-black'><%= panel_title %></h1>
+  </div>
+</div>
+
+<!-- FIXME: Fix errors not even showing up and then replace errors for Animate -->
+<% if @subject.errors.any? %>
+  <div class='alert alert-danger alert-dismissable'>
+    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>
+
+    <ul>
+      <% @subject.errors.full_messages.each do |message| %>
+        <li> <%= message %> </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class='form_container text-black'>
+  <div class='form_container_content'>
+    <%= form_for @subject, local: true do |f| %>
+
+      <div class='form-group'>
+        <%= f.label :description %>
+        <%= f.text_field :description, autofocus: true,
+          class: 'form-control',
+          placeholder: attribute_model(@subject, :description)  %>
+      </div>
+
+      <button type='submit' class='btn btn-primary btn-icon-split'>
+        <span class='icon text-white-50'>
+          <i class='fas fa-check'></i>
+        </span>
+        <span class='text'><%= submit %></span>
+      </button>
+
+    <% end %>
+  </div>
+</div>

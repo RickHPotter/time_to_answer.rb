@@ -1,6 +1,18 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
+.form_container {
+  margin-bottom: 1rem;
+}
+
+.form_container_content {
+  padding: 1rem;
+  position: relative;
+  margin: 0 -1.5rem 1rem;
+  border: solid var(--bs-border-color);
+  border-width: 1px 0;
+}
+
 .field_with_errors > input {
   border-color: #dc3545;
   padding-right: calc(1.5em + 0.75rem);
@@ -38,4 +50,23 @@
 
 .bg-password-user {
   background: url('https://cdn130.picsart.com/288881236029211.png?to=crop&type=webp&r=470x480&q=85');
+}
+
+
+// MEDIA QUERIES
+
+@media (min-width: 768px) {
+  .form_container {
+    margin-right: 0;
+    margin-left: 0;
+    border-width: 1px;
+    border-radius: var(--bs-border-radius);
+  }
+  .form_container_content {
+    --bd-example-padding: 1.5rem;
+    margin-right: 0;
+    margin-left: 0;
+    border-width: 1px;
+    border-radius: var(--bs-border-radius);
+  }
 }

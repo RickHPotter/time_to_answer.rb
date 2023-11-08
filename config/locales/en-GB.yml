@@ -1,8 +1,17 @@
-actions:
-  index: Index
-  show: Show
-  new: New
-  create: Create
-  edit: Edit
-  update: Update
-  destroy: Destroy
+"en-GB":
+  actions:
+    index: Index
+    show: Show
+    new: New
+    create: Create
+    edit: Edit
+    update: Update
+    destroy: Destroy
+
+  gerund:
+    show: Showing
+    new: Creating
+    create: Creating
+    edit: Editing
+    update: Updating
+    destroy: Destroying

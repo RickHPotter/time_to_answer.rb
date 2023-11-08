@@ -21,7 +21,7 @@
     <!-- Nav Item - Admins -->
     <li class="nav-item">
       <%= link_to admin_root_path, class: 'nav-link' do %>
-        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="fas fa-fw fa-user-shield"></i>
         <span>Admins</span></a>
     <% end %>
     </li>
@@ -29,7 +29,7 @@
     <!-- Nav Item - Users -->
     <li class="nav-item">
       <%= link_to user_root_path, class: 'nav-link' do %>
-        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="fas fa-fw fa-user"></i>
         <span>Users</span></a>
     <% end %>
     </li>
@@ -37,7 +37,32 @@
 
   <!-- Heading -->
   <div class="sidebar-heading">
-    Interface
+    Questionaire
+  </div>
+
+  <!-- Divider -->
+  <hr class="sidebar-divider my-0">
+
+  <!-- Nav Item - Q&A Subjects -->
+  <li class="nav-item">
+    <%= link_to subjects_path, class: 'nav-link' do %>
+      <i class="far fa-fw fa-file-alt"></i>
+      <span>Subjects</span></a>
+  <% end %>
+  </li>
+
+  <!-- Nav Item - Q&A Subjects -->
+  <li class="nav-item">
+    <!-- FIXME: Remember to change this -->
+    <%= link_to subjects_path, class: 'nav-link' do %>
+      <i class="far fa-fw fa-file-alt"></i>
+      <span>Questions</span></a>
+  <% end %>
+  </li>
+
+  <!-- Heading -->
+  <div class="sidebar-heading">
+    About
   </div>
 
   <!-- Divider -->

@@ -1,5 +1,5 @@
 # == Schema Information
-#
+
 # Table name: answers
 #
 #  id          :integer          not null, primary key

@@ -1,0 +1,7 @@
+<h1 class='h3 mb-2 text-gray-800'>
+  <%= pluralise_model(Subject, @count) %>
+</h1>
+
+<p class='mb-4'> Note that you cannot delete admins or edit their data. </p>
+
+<%= ajax_datatable *Subject.datatable(view_context: self) %>

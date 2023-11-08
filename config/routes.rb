@@ -13,6 +13,8 @@ Rails.application.routes.draw do
       post 'datatable'
       delete 'destroy'
     end
+
+    resources :subjects, except: %i[show]
   end
 
   scope module: :users_back_office do

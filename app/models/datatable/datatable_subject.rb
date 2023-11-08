@@ -2,12 +2,12 @@
 
 # Datatable Module
 module Datatable
-  # Datatable Schema for User
-  class DatatableUser < DatatableBase
+  # Datatable Schema for Subject
+  class DatatableSubject < DatatableBase
     extend Forwardable
 
     def_delegators :@view, :content_tag, :concat, :link_to_show, :link_to_edit, :link_to_destroy,
-                   :edit_user_registration_path, :users_destroy_path
+                   :subject_path, :edit_subject_path
 
     def initialize(params = {}, view_context: nil)
       raise ArgumentError, 'View Context is missing, my dear friendo.' if view_context.blank?
@@ -21,10 +21,8 @@ module Datatable
 
     def columns
       @columns ||= {
-        id: { source: 'User.id' },
-        email: { source: 'User.email' },
-        created_at: { source: 'User.created_at' },
-        updated_at: { source: 'User.updated_at' },
+        id: { source: 'Subject.id' },
+        description: { source: 'Subject.description' },
         actions: { label: 'Actions' }
       }
     end
@@ -33,9 +31,7 @@ module Datatable
       @datum ||= records.map do |record|
         {
           id: record.id,
-          email: record.email,
-          created_at: record.created_at,
-          updated_at: record.updated_at,
+          description: record.description,
           actions: actions(record.id)
         }
       end
@@ -43,13 +39,13 @@ module Datatable
 
     def actions(id)
       content_tag(:div, class: 'row text-center') do
-        concat(link_to_edit(edit_user_registration_path, class: 'col-6'))
-        concat(link_to_destroy(users_destroy_path(id:), class: 'col-6'))
+        concat(link_to_edit(edit_subject_path(id:), class: 'col-6'))
+        concat(link_to_destroy(subject_path(id:), class: 'col-6'))
       end
     end
 
     def records
-      User.all
+      Subject.all.order(description: :asc)
     end
   end
 end
