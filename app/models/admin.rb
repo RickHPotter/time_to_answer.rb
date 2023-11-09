@@ -24,6 +24,7 @@ class Admin < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # CLASS METHODS
   def self.datatable(params = {}, view_context: nil)
     Datatable::DatatableAdmin.new(params, view_context:).datatable
   end

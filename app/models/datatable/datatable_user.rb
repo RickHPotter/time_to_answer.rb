@@ -4,11 +4,13 @@
 module Datatable
   # Datatable Schema for User
   class DatatableUser < DatatableBase
+    # EXTENDS
     extend Forwardable
 
     def_delegators :@view, :content_tag, :concat, :link_to_show, :link_to_edit, :link_to_destroy,
                    :edit_user_registration_path, :users_destroy_path
 
+    # INSTANCE METHODS
     def initialize(params = {}, view_context: nil)
       raise ArgumentError, 'View Context is missing, my dear friendo.' if view_context.blank?
 

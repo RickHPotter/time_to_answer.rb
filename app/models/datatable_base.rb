@@ -2,6 +2,7 @@
 
 # Father Class for all our lil minions
 class DatatableBase
+  # INSTANCE METHODS
   def initialize(only, except, query)
     @only = only
     @except = except

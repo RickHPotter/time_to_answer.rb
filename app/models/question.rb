@@ -20,11 +20,15 @@
 #  subject_id  (subject_id => subjects.id)
 #
 class Question < ApplicationRecord
+  # RELATIONSHIPS
   belongs_to :subject
   has_many :answers
+  accepts_nested_attributes_for :answers, allow_destroy: true
 
+  # VALIDATIONS
   validates :description, presence: true
 
+  # CLASS METHODS
   def self.datatable(params = {}, view_context: nil)
     Datatable::DatatableQuestion.new(params, view_context:).datatable
   end

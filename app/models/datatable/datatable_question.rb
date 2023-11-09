@@ -4,11 +4,13 @@
 module Datatable
   # Datatable Schema for Question
   class DatatableQuestion < DatatableBase
+    # EXTENDS
     extend Forwardable
 
     def_delegators :@view, :content_tag, :concat, :link_to_show, :link_to_edit, :link_to_destroy,
                    :question_path, :edit_question_path
 
+    # INSTANCE METHODS
     def initialize(params = {}, view_context: nil)
       raise ArgumentError, 'View Context is missing, my dear friendo.' if view_context.blank?
 

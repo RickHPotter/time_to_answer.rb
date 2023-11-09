@@ -4,10 +4,12 @@
 module Datatable
   # Datatable Schema for Admin
   class DatatableAdmin < DatatableBase
+    # EXTENDS
     extend Forwardable
 
     def_delegators :@view, :content_tag, :concat, :link_to, :edit_admin_registration_path
 
+    # INSTANCE METHODS
     def initialize(params = {}, view_context: nil)
       raise ArgumentError, 'View Context is missing, my dear friendo.' if view_context.blank?
 

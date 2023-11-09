@@ -11,6 +11,9 @@ gem 'rails', '~> 7.0.8'
 # Authentication
 gem 'devise', '~> 4.9'
 
+# Nested Forms
+gem 'cocoon'
+
 # i18n
 gem 'rails-i18n', '~> 7.0.0'
 

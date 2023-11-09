@@ -1,5 +1,7 @@
-# == Schema Information
+# frozen_string_literal: true
 
+# == Schema Information
+#
 # Table name: answers
 #
 #  id          :integer          not null, primary key
@@ -18,5 +20,6 @@
 #  question_id  (question_id => questions.id)
 #
 class Answer < ApplicationRecord
+  # RELATIONSHIPS
   belongs_to :question
 end

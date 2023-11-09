@@ -24,6 +24,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # CLASS METHODS
   def self.datatable(params = {}, view_context: nil)
     Datatable::DatatableUser.new(params, view_context:).datatable
   end
