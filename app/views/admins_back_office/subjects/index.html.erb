@@ -4,4 +4,4 @@
 
 <p class='mb-4'> Note that you cannot delete admins or edit their data. </p>
 
-<%= ajax_datatable *Subject.datatable(view_context: self) %>
+<%= ajax_datatable *Subject.datatable(view_context: self), new_button: new_subject_path %>

@@ -5,12 +5,12 @@
 </div>
 
 <!-- FIXME: Fix errors not even showing up and then replace errors for Animate -->
-<% if @subject.errors.any? %>
+<% if @question.errors.any? %>
   <div class='alert alert-danger alert-dismissable'>
     <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>
 
     <ul>
-      <% @subject.errors.full_messages.each do |message| %>
+      <% @question.errors.full_messages.each do |message| %>
         <li> <%= message %> </li>
       <% end %>
     </ul>
@@ -19,13 +19,19 @@
 
 <div class='form_container text-black'>
   <div class='form_container_content'>
-    <%= form_for @subject do |f| %>
+    <%= form_for @question do |f| %>
 
       <div class='form-group'>
         <%= f.label :description %>
-        <%= f.text_field :description, autofocus: true,
-          class: 'form-control',
-          placeholder: attribute_model(@subject, :description)  %>
+        <%= f.text_area :description, autofocus: true,
+          class: 'form-control', rows: 5,
+          placeholder: attribute_model(@question, :description)  %>
+      </div>
+
+      <!-- TODO: Maybe turn this into an AJAX autocomplete -->
+      <div class='form-group'>
+        <%= f.label :subject_id %>
+        <%= f.collection_select(:subject_id, @subjects, :id, :description, {}, { class: 'form-control' }) %>
       </div>
 
       <button type='submit' class='btn btn-primary btn-icon-split'>

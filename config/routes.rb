@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     end
 
     resources :subjects, except: %i[show]
+    resources :questions, except: %i[show]
   end
 
   scope module: :users_back_office do

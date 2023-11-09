@@ -22,4 +22,10 @@
 class Question < ApplicationRecord
   belongs_to :subject
   has_many :answers
+
+  validates :description, presence: true
+
+  def self.datatable(params = {}, view_context: nil)
+    Datatable::DatatableQuestion.new(params, view_context:).datatable
+  end
 end

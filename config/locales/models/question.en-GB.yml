@@ -1,0 +1,13 @@
+"en-GB":
+  activerecord:
+    models:
+      question:
+        one: Question
+        other: Questions
+    attributes:
+      question:
+        id: ID
+        description: Description
+        correct_answer: Correct answer
+        created_at: Created at
+        updated_at: Updated at

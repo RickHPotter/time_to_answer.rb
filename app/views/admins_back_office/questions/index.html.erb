@@ -1,0 +1,7 @@
+<h1 class='h3 mb-2 text-gray-800'>
+  <%= pluralise_model(Question, @count) %>
+</h1>
+
+<p class='mb-4'> Note that you cannot delete admins or edit their data. </p>
+
+<%= ajax_datatable *Question.datatable(view_context: self), new_button: new_question_path %>

@@ -26,11 +26,14 @@ class DatatableBase
   def labelise_columns
     @columns.each_key do |key|
       inner_hash = @columns[key]
-      source = inner_hash[:source]
+      next if inner_hash[:source].blank? || inner_hash[:label].present?
 
-      if source.present? && inner_hash[:label].blank?
-        inner_hash[:label] = I18n.t("activerecord.attributes.#{source.downcase}")
-      end
+      source = inner_hash[:source].downcase
+      inner_hash[:label] = if source.include?('.')
+                             I18n.t("activerecord.attributes.#{source}")
+                           else
+                             I18n.t("activerecord.models.#{source}.one")
+                           end
     end
   end
 
